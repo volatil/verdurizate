@@ -2,6 +2,10 @@ import {
 	BD,
 } from "./constants.js";
 
+const guardar = function ( data ) {
+	localStorage.setItem("verdurizate", data);
+};
+
 const loading = `
 	<div id="loading">
 		<div class="load-wrapp">
