@@ -14,11 +14,20 @@ const loading = `
 	</div>
 `;
 
+const visualizacantidadproductos = function () {
+	let cantidadproducto = 0;
+	$.each($(".productos .producto"), function () {
+		cantidadproducto += Number( $(this).find(".estado div input").val() );
+		$("header .menu ul li a span.cantidad").html( cantidadproducto );
+	});
+};
+
 const agregaquita = function () {
 	$(".productos .producto .estado button.agregar").on("click", function () {
 		$(this).hide();
 		$(this).parent().find("> div > input").val("1");
 		$(this).parent().find("> div").show();
+		visualizacantidadproductos();
 	});
 
 	$(".productos .producto .estado div button").on("click", function () {
@@ -42,6 +51,8 @@ const agregaquita = function () {
 			$(this).parent().parent().find(".agregar")
 				.show();
 		}
+
+		visualizacantidadproductos();
 	});
 };
 

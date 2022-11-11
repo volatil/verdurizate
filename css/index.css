@@ -42,6 +42,7 @@ header .menu ul li {
   margin-left: 30px;
 }
 header .menu ul li a {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -58,6 +59,18 @@ header .menu ul li a p {
   margin: 0;
   padding: 0;
   color: #2b2b2b;
+}
+header .menu ul li a span.cantidad {
+  background: #b1e461;
+  border-radius: 50%;
+  padding: 2px 6px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  line-height: 1.6em;
+  position: absolute;
+  top: -10px;
+  left: -30px;
 }
 
 .contenedor {
