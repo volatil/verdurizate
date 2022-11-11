@@ -1,7 +1,9 @@
-const RAPID_HOST = "spotify23.p.rapidapi.com";
-const RAPID_KEY = "98d8757727msh41ea8bae09d95c0p125af3jsnd81dae475fd1";
+const BD_TOKEN = "1QcfPS6G-guXEBaZjLzUoCijieQ9Bl4hGKRHea-8UpQA";
+const DRIVE_KEY = "AIzaSyAOWV0qar-gsYcyp5yWS99GQlPVovkuxcU";
+const BD = `https://sheets.googleapis.com/v4/spreadsheets/${BD_TOKEN}/values/inventario?key=${DRIVE_KEY}`;
 
 export {
-	RAPID_HOST,
-	RAPID_KEY,
+	BD_TOKEN,
+	DRIVE_KEY,
+	BD,
 };

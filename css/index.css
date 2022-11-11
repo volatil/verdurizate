@@ -29,43 +29,6 @@ header .logo a {
 header .logo a img {
   height: 100%;
 }
-header .buscador {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 15px auto 0;
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-}
-header .buscador input {
-  width: calc(100% - 100px - 10px);
-  height: 40px;
-  padding-left: 10px;
-  border: 1px solid #cccccc;
-  outline: none;
-  border-radius: 10px;
-}
-header .buscador input:focus-visible,
-header .buscador input:focus,
-header .buscador input:active {
-  border: 1px solid #b1e461;
-}
-header .buscador button {
-  width: 100px;
-  background: #b1e461;
-  border: 1px solid #77a530;
-  border-radius: 10px;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-header .buscador button:hover {
-  background: #77a530;
-  color: white;
-}
 header .menu ul {
   display: flex;
   margin: 0;
@@ -97,19 +60,113 @@ header .menu ul li a p {
   color: #2b2b2b;
 }
 
-.resultados iframe {
-  width: 20%;
+.contenedor {
+  width: 96%;
+  margin: 0 auto;
+}
+
+nav.categorias {
+  margin-bottom: 30px;
+}
+nav.categorias h2 {
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+}
+nav.categorias ul.categorias {
+  margin: 0;
+  background: #f5f5f5;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  width: max-content;
+  border-radius: 10px;
+}
+nav.categorias ul.categorias li {
+  list-style: none;
+  padding: 10px 23px;
+  border-radius: 10px;
+  margin-right: 20px;
+  color: #555;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+nav.categorias ul.categorias li:hover {
+  background: white;
+}
+nav.categorias ul.categorias li.activo {
+  background: white;
+  box-shadow: 1px 1px 6px -4px black;
 }
 
 .productos {
   display: flex;
+  flex-wrap: wrap;
 }
 .productos .producto {
-  width: 23%;
-  margin: 0 1% 1%;
+  width: 14%;
+  margin: 0 3% 5%;
 }
 .productos .producto img {
   width: 100%;
+}
+.productos .producto p {
+  color: black;
+}
+.productos .producto p.nombre {
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  line-height: 1em;
+  height: 32px;
+}
+.productos .producto p.cantidad {
+  color: #555;
+  font-size: 0.9em;
+  margin: 0 0 5px 0;
+}
+.productos .producto p.precio {
+  font-weight: bold;
+}
+.productos .producto .estado button.agregar {
+  background: #b1e461;
+  color: black;
+  border: 1px solid #77a530;
+  border-radius: 40px;
+  padding: 2px 15px;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.productos .producto .estado button.agregar:hover {
+  background: #77a530;
+}
+.productos .producto .estado div {
+  display: flex;
+}
+.productos .producto .estado div input {
+  width: 30px;
+  text-align: center;
+}
+.productos .producto .estado div button {
+  background: #b1e461;
+  color: black;
+  border: 1px solid #77a530;
+  border-radius: 40px;
+  padding: 2px 15px;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.productos .producto .estado div button:hover {
+  background: #77a530;
 }
 
 #loading {

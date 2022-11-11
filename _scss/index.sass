@@ -6,7 +6,22 @@ $verde: #b1e461
 $verdeHover: #77a530
 
 // HEADER
-$anchoboton: 100px
+$button_medida: 31px
+
+@mixin btn
+	background: $verde
+	color: black
+	border: 1px solid $verdeHover
+	border-radius: 40px
+	padding: 2px 15px
+	margin: 0 auto
+	text-align: center
+	-webkit-transition: all 0.2s ease-out
+	-moz-transition:    all 0.2s ease-out
+	-o-transition:      all 0.2s ease-out
+	transition:         all 0.2s ease-out
+	&:hover
+		background: $verdeHover
 
 body 
 	font-family: 'Jost', sans-serif
@@ -24,38 +39,6 @@ header
 			display: block
 			img
 				height: 100%
-	.buscador
-		position: absolute
-		top: 0
-		left: 0
-		right: 0
-		margin: 15px auto 0
-		width: 50%
-		display: flex
-		justify-content: space-between
-		input
-			width: calc( 100% - $anchoboton - 10px )
-			height: 40px
-			padding-left: 10px
-			border: 1px solid $c
-			outline: none
-			border-radius: 10px
-		input:focus-visible ,
-		input:focus ,
-		input:active 
-			border: 1px solid $verde
-		button
-			width: $anchoboton
-			background: $verde
-			border: 1px solid $verdeHover
-			border-radius: 10px
-			-webkit-transition: all 0.2s ease-out
-			-moz-transition:    all 0.2s ease-out
-			-o-transition:      all 0.2s ease-out
-			transition:         all 0.2s ease-out
-		button:hover
-			background: $verdeHover
-			color: white
 	.menu
 		ul
 			display: flex
@@ -83,17 +66,73 @@ header
 						padding: 0
 						color: #2b2b2b
 
-.resultados
-	iframe
-		width: 20%
+.contenedor
+	width: 96%
+	margin: 0 auto
+
+nav.categorias 
+	margin-bottom: 30px
+	h2
+		font-weight: bold
+		color: #555
+		text-transform: uppercase
+	ul.categorias
+		margin: 0
+		background: #f5f5f5
+		padding: 10px
+		display: flex
+		justify-content: flex-start
+		width: max-content
+		border-radius: 10px
+		li
+			list-style: none
+			padding: 10px 23px
+			border-radius: 10px
+			margin-right: 20px
+			color: #555
+			font-weight: 500
+			cursor: pointer
+			text-transform: capitalize
+			&:hover
+				background: white
+		li.activo
+			background: white
+			box-shadow: 1px 1px 6px -4px black
 
 .productos
 	display: flex
+	flex-wrap: wrap
 	.producto
-		width: 23%
-		margin: 0 1% 1%
+		width: 14%
+		margin: 0 3% 5%
 		img
 			width: 100%
+		p
+			color: black
+		p.nombre
+			margin-top: 10px
+			margin-bottom: 0
+			text-transform: capitalize
+			line-height: 1em
+			height: 32px
+		p.cantidad
+			color: #555
+			font-size: .9em
+			margin: 0 0 5px 0
+		p.precio
+			font-weight: bold
+		.estado
+			button.agregar
+				@include btn
+				// display: none
+			div
+				display: flex
+				input
+					width: 30px
+					text-align: center
+				button
+					@include btn
+				
 
 #loading
 	width: 60px

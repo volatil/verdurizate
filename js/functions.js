@@ -1,6 +1,5 @@
 import {
-	RAPID_KEY,
-	RAPID_HOST,
+	BD,
 } from "./constants.js";
 
 const loading = `
@@ -15,64 +14,70 @@ const loading = `
 	</div>
 `;
 
-const getAlbums = function ( uri ) {
-	const html = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/${uri}" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
-	return html;
+const agregaquita = function () {
+	$(".productos .producto .estado button.agregar").on("click", function () {
+		$(this).hide();
+		$(this).parent().find("> div > input").val("1");
+		$(this).parent().find("> div").show();
+	});
+
+	$(".productos .producto .estado div button").on("click", function () {
+		const producto = $(this).parent().parent().parent()
+			.find(".nombre")
+			.html();
+
+		const accion = $(this).attr("class");
+		let cantidad = Number( $(this).parent().find(".cantidad").val() );
+		// $(".productos .producto .estado button.agregar").show();
+		if ( accion === "mas" ) {
+			cantidad += 1;
+			$(this).parent().find(".cantidad").val( cantidad );
+		} else {
+			cantidad -= 1;
+			$(this).parent().find(".cantidad").val( cantidad );
+		}
+
+		if ( cantidad === 0 ) {
+			$(this).parent().hide();
+			$(this).parent().parent().find(".agregar")
+				.show();
+		}
+	});
 };
 
-const getMusic = function ( uri ) {
-	const html = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${uri}" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
-	return html;
-};
-
-const getArtist = function ( artist ) {
-	const html = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/${artist}" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
-	return html;
-};
-
-const buscar = function (lobuscado) {
-	const options = {
-		method: "GET",
-		headers: {
-			"X-RapidAPI-Key": RAPID_KEY,
-			"X-RapidAPI-Host": RAPID_HOST,
-		},
-	};
-
-	fetch(`https://spotify23.p.rapidapi.com/search/?q=%3C${lobuscado}%3E&type=multi&offset=0&limit=2&numberOfTopResults=5`, options)
-		.then((response) => response.json())
-		.then((response) => {
-			console.log( response );
-
-			// ALBUMS
-			$(".resultados").append("<div data-tema='albums'><h2>Albums</h2></div>");
-			for ( let count = 0; count <= response.tracks.items.length - 1; count++ ) {
-				let album = response.albums.items[count].data.uri;
-				album = album.split("album:")[1];
-				$(".resultados div[data-tema=albums]").append( getAlbums(album) );
-			}
-
-			// MUSICA
-			$(".resultados").append("<div data-tema='musica'><h2>Canciones</h2></div>");
-			for ( let count = 0; count <= response.tracks.items.length - 1; count++ ) {
-				const id = response.tracks.items[count].data.id;
-				$(".resultados div[data-tema=musica]").append( getMusic(id) );
-			}
-
-			// ARTISTAS
-			$(".resultados").append("<div data-tema='artistas'><h2>Artistas</h2></div>");
-			for ( let count = 0; count <= response.artists.items.length - 1; count++ ) {
-				let artist = response.artists.items[count].data.uri;
-				artist = artist.split("artist:")[1];
-				$(".resultados div[data-tema=artistas]").append( getArtist(artist) );
-			}
-		});
-	$("#loading").remove();
+const trae = function () {
+	fetch( BD ).then((value) => value.json() ).then((value) => {
+		for ( let count = 1; count <= value.values.length - 1; count++ ) {
+			const producto = {
+				id: value.values[count][0],
+				nombre: value.values[count][1],
+				precio: Number(value.values[count][2]).toLocaleString("es-CL"),
+				imagen: value.values[count][3],
+				cantidad: value.values[count][4],
+				categoria: value.values[count][5],
+			};
+			$(".productos").append(`
+				<div class="producto" data-id="${producto.id}" data-categoria="${producto.categoria}">
+					<img src="${producto.imagen}" alt="${producto.nombre}" />
+					<p class="nombre">${producto.nombre}</p>
+					<p class="cantidad">${producto.cantidad}</p>
+					<p class="precio">$ ${producto.precio}</p>
+					<div class="estado">
+						<button class="agregar">Agregar</button>
+						<div style="display:none">
+							<button class="mas">+</button>
+							<input class="cantidad" value="0">
+							<button class="menos">-</button>
+						</div>
+					</div>
+				</div>
+			`);
+		}
+		agregaquita();
+	});
 };
 
 export {
 	loading,
-	getMusic,
-	getArtist,
-	buscar,
+	trae,
 };
