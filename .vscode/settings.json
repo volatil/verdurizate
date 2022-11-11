@@ -1,0 +1,39 @@
+{ 
+	"editor.codeActionsOnSave": {
+		// "source.fixAll.eslint": true
+	},
+	"emeraldwalk.runonsave": {
+		"commands": [
+			{
+				 "match": ".*",
+				 "isAsync": true,
+				 "cmd": "echo.> css/index.min.css",
+			},
+			{
+				 "match": ".*",
+				 "isAsync": true,
+				 "cmd": "sass _scss/index.sass:css/index.css",
+			},
+			{
+				 "match": ".*",
+				 "isAsync": true,
+				 "cmd": "minify js/index.js > js/index.min.js",
+			},
+			{
+				 "match": ".*",
+				 "isAsync": true,
+				 "cmd": "minify css/index.css > css/index.min.css",
+			},
+			// {
+			// 	 "match": ".*",
+			// 	 "isAsync": true,
+			// 	 "cmd": "css-b64-images css/borrame.min.css > css/borrame.min.css",
+			// },
+			{
+				 "match": ".*",
+				 "isAsync": true,
+				 "cmd": "pug _pug/index.pug --out ${workspaceFolder}",
+			},
+		]
+	}
+}
