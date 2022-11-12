@@ -191,27 +191,25 @@ nav.categorias ul.categorias li.activo {
   background: #77a530;
 }
 
-#loading {
-  width: 60px;
-  margin: 40px auto 0;
-}
-#loading .load-wrapp .load-3 .line {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  background-color: #4b9cdb;
-}
-#loading .load-wrapp .load-3 .line:nth-last-child(3) {
-  animation: Loading 0.6s 0.3s linear infinite;
-}
-#loading .load-wrapp .load-3 .line:nth-last-child(2) {
-  animation: Loading 0.6s 0.2s linear infinite;
-}
-#loading .load-wrapp .load-3 .line:nth-last-child(1) {
-  animation: Loading 0.6s 0.1s linear infinite;
+section.productosCarrito_fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2705882353);
+  z-index: 1;
 }
 
+section.productosCarrito_contenido {
+  z-index: 2;
+  background: white;
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 footer {
   display: flex;
   justify-content: space-between;

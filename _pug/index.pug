@@ -8,9 +8,9 @@ head
 	link(rel="stylesheet", href="css/index.min.css")
 	
 	script(src='https://code.jquery.com/jquery-3.5.1.min.js')
-	script(type="module", src="js/index.min.js")
+	//- script(type="module", src="js/index.min.js")
 	
-	title Verdurizate | AHORRA dinero, compra SALUDABLE
+	title Verdurizate | AHORRA dinero, compra SALUDABLE.
 body
 	include header
 		
@@ -19,6 +19,8 @@ body
 	.contenedor
 		include nav
 		.productos
+	
+	include productoscarrito
 
 	include footer
 	//- https://dribbble.com/shots/15980272-HODXpress-Grocery-Delivery
