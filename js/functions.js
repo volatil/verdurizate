@@ -2,21 +2,22 @@ import {
 	BD,
 } from "./constants.js";
 
-const guardar = function ( data ) {
-	localStorage.setItem("verdurizate", data);
+const guardarStorage = function ( data ) {
+	let todo = [];
+	$.each($(".productos .producto"), function () {
+		const prod = {
+			id: $(this).attr("data-id"),
+			nombre: $(this).find("p.nombre").html(),
+			cantidad: $(this).find(".estado div input").val(),
+		};
+		todo.push({
+			id: prod.id,
+			nombre: prod.nombre,
+			cantidad: prod.cantidad,
+		});
+	});
+	localStorage.setItem("verdurizate", JSON.stringify(todo));
 };
-
-const loading = `
-	<div id="loading">
-		<div class="load-wrapp">
-			<div class="load-3">
-				<div class="line"></div>
-				<div class="line"></div>
-				<div class="line"></div>
-			</div>
-		</div>
-	</div>
-`;
 
 const visualizacantidadproductos = function () {
 	let cantidadproducto = 0;
@@ -26,12 +27,13 @@ const visualizacantidadproductos = function () {
 	});
 };
 
-const agregaquita = function () {
+const agregaquitaAlCarro = function () {
 	$(".productos .producto .estado button.agregar").on("click", function () {
 		$(this).hide();
 		$(this).parent().find("> div > input").val("1");
 		$(this).parent().find("> div").show();
 		visualizacantidadproductos();
+		guardarStorage();
 	});
 
 	$(".productos .producto .estado div button").on("click", function () {
@@ -57,6 +59,7 @@ const agregaquita = function () {
 		}
 
 		visualizacantidadproductos();
+		guardarStorage();
 	});
 };
 
@@ -88,11 +91,9 @@ const trae = function () {
 				</div>
 			`);
 		}
-		agregaquita();
+		agregaquitaAlCarro();
 	});
 };
 
-export {
-	loading,
-	trae,
-};
+// export { trae };
+export default trae;

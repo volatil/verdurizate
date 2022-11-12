@@ -1,8 +1,7 @@
-import {
-	// autocomplete,
-	loading,
-	trae,
-} from "./functions.js";
+// import {
+// 	trae,
+// } from "./functions.js";
+import trae from "./functions.js";
 
 // NAV CATEGORIAS
 $("nav.categorias ul.categorias li").on("click", function () {
