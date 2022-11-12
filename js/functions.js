@@ -3,7 +3,7 @@ import {
 } from "./constants.js";
 
 const guardarStorage = function ( data ) {
-	let todo = [];
+	let todo = []; /* eslint-disable-line */
 	$.each($(".productos .producto"), function () {
 		const prod = {
 			id: $(this).attr("data-id"),
