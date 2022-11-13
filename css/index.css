@@ -14,7 +14,7 @@ body {
   font-family: "Jost", sans-serif;
 }
 
-header {
+header.principal {
   position: fixed;
   background: white;
   width: 100%;
@@ -24,26 +24,30 @@ header {
   justify-content: space-between;
   padding: 0 1%;
 }
-header .logo a {
+header.principal ~ * {
+  margin-top: 70px;
+}
+header.principal .logo a {
   height: 100%;
   display: block;
 }
-header .logo a img {
+header.principal .logo a img {
   height: 100%;
 }
-header .menu ul {
+header.principal .menu ul {
   display: flex;
   margin: 0;
   padding: 0;
   margin-top: 20px;
 }
-header .menu ul li {
+header.principal .menu ul li {
   padding: 0;
   margin: 0;
   list-style: none;
   margin-left: 30px;
+  cursor: pointer;
 }
-header .menu ul li a {
+header.principal .menu ul li a {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -52,17 +56,17 @@ header .menu ul li a {
   text-decoration: none;
   color: #333;
 }
-header .menu ul li a img {
+header.principal .menu ul li a img {
   width: 20px;
   margin-right: 7px;
 }
-header .menu ul li a p {
+header.principal .menu ul li a p {
   text-transform: capitalize;
   margin: 0;
   padding: 0;
   color: #2b2b2b;
 }
-header .menu ul li a span.cantidad {
+header.principal .menu ul li a span.cantidad {
   background: #b1e461;
   border-radius: 50%;
   padding: 2px 6px;
@@ -77,7 +81,6 @@ header .menu ul li a span.cantidad {
 
 .carruselTemporal {
   width: 100%;
-  margin-top: 70px;
 }
 
 .contenedor {
@@ -199,17 +202,48 @@ section.productosCarrito_fondo {
   bottom: 0;
   background: rgba(0, 0, 0, 0.2705882353);
   z-index: 1;
+  display: none;
 }
 
 section.productosCarrito_contenido {
+  position: fixed;
   z-index: 2;
   background: white;
   width: 40%;
   height: 100%;
-  position: absolute;
   top: 0;
+  padding: 20px;
+  right: -40%;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+section.productosCarrito_contenido.desplegar {
   right: 0;
 }
+section.productosCarrito_contenido.desplegar header {
+  display: flex;
+  justify-content: flex-end;
+}
+section.productosCarrito_contenido.desplegar header img.cerrar {
+  display: block;
+  width: 40px;
+  cursor: pointer;
+}
+section.productosCarrito_contenido.desplegar .sinproductos {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+section.productosCarrito_contenido.desplegar .conproductos .cantidadproductos {
+  width: 100%;
+  text-align: center;
+}
+
 footer {
   display: flex;
   justify-content: space-between;

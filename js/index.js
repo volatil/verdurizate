@@ -9,6 +9,18 @@ $("nav.categorias ul.categorias li").on("click", function () {
 	$(this).addClass("activo");
 });
 
+// X del carro de compras
+$("section.productosCarrito_contenido header img.cerrar").on("click", () => {
+	console.log( `escondiendo?` );
+	$(".productosCarrito_fondo").hide();
+	$("productosCarrito_contenido").removeClass("desplegar");
+});
+$("header.principal .menu ul li.carro").on("click", () => {
+	console.log( `desplegando?` );
+	$(".productosCarrito_fondo").show();
+	$("productosCarrito_contenido").addClass("desplegar");
+});
+
 trae();
 
 // https://dribbble.com/shots/16856425-SazheSound-Music-Player

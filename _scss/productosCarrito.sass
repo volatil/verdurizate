@@ -7,15 +7,37 @@ section.productosCarrito_fondo
 	bottom: 0
 	background: #00000045
 	z-index: 1
+	display: none
 section.productosCarrito_contenido
+	position: fixed
 	z-index: 2
 	background: white
 	width: 40%
 	height: 100%
-	position: absolute
 	top: 0
+	padding: 20px
+	right:  -40%
+	-webkit-transition: all 0.2s ease-out
+	-moz-transition:    all 0.2s ease-out
+	-o-transition:      all 0.2s ease-out
+	transition:         all 0.2s ease-out
+section.productosCarrito_contenido.desplegar
 	right: 0
-	div.titulo 
-		span.carrito
-		p
-
+	header
+		display: flex
+		justify-content: flex-end
+		img.cerrar
+			display: block
+			width: 40px
+			cursor: pointer
+	.sinproductos
+		display: flex
+		align-content: center
+		align-items: center
+		justify-content: center
+		height: 80%
+	.conproductos
+		.cantidadproductos
+			width: 100%
+			text-align: center
+				

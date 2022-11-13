@@ -24,7 +24,7 @@ $verdeHover: #77a530
 body 
 	font-family: 'Jost', sans-serif
 
-header
+header.principal
 	position: fixed
 	background: white
 	width: 100%
@@ -33,6 +33,8 @@ header
 	display: flex
 	justify-content: space-between
 	padding: 0 1%
+	~ *
+		margin-top: 70px
 	.logo
 		a
 			height: 100%
@@ -50,6 +52,7 @@ header
 				margin: 0
 				list-style: none
 				margin-left: 30px
+				cursor: pointer
 				a
 					position: relative
 					display: flex
@@ -80,7 +83,6 @@ header
 
 .carruselTemporal
 	width: 100%
-	margin-top: 70px
 
 .contenedor
 	width: 96%
@@ -173,3 +175,4 @@ footer
 			width: 44%
 			border: 1px solid $d
 			padding: 10px
+
