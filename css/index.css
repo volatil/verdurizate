@@ -287,6 +287,12 @@ section.productosCarrito_contenido.desplegar .conproductos .cantidadproductos {
   text-align: center;
 }
 
+@media (max-width: 550px) {
+  section.productosCarrito_contenido {
+    width: 70%;
+    right: -70%;
+  }
+}
 footer {
   display: flex;
   justify-content: space-between;
