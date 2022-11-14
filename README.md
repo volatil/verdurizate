@@ -1,5 +1,5 @@
 # VERDURIZATE !
 
 - Descripcion para la canasta de productos
-- Agregar al localStorage el precio
+- Agregar por ID al carrito
 - "Mi Cuenta"?
