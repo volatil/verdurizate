@@ -63,6 +63,50 @@ const agregaquitaAlCarro = function () {
 	});
 };
 
+const agregarProdPorID = function ( elid ) {
+	fetch( BD ).then((value) => value.json() ).then((value) => {
+		const prod = {
+			id: value.values[elid][0],
+			nombre: value.values[elid][1],
+			precio: {
+				ahora: Number(value.values[elid][2]).toLocaleString("es-CL"),
+				dcto: value.values[elid][7] ? `${value.values[elid][7]}%` : "",
+				antes: () => {
+					let finalantes = "";
+					if ( prod.precio.dcto ) {
+						const elantes = Number( prod.precio.dcto.replaceAll("%", "") );
+						const elahora = Number( prod.precio.ahora.replaceAll(".", "") );
+						let total = (elantes * elahora);
+						total /= 100;
+						finalantes = `$ ${ parseInt( total, 10 ) }`;
+					}
+					return finalantes;
+				},
+			},
+			imagen: value.values[elid][3],
+			cantidad: value.values[elid][4],
+			categoria: value.values[elid][5],
+		};
+		if ( prod.id === elid ) {
+			$(".conproductos .productos").append(`
+				<div class="producto" data-id="${prod.id}" data-categoria="${prod.categoria}">
+					<div class="imagen">
+						<span class="dcto">${prod.precio.dcto}</span>
+						<img src="${prod.imagen}" alt="${prod.nombre}" />
+					</div>
+					<p class="nombre">${prod.nombre}</p>
+					<p class="cantidad">${prod.cantidad}</p>
+					<div class="precio">
+						<p class="ahora">$ ${prod.precio.ahora}</p>
+						<p class="antes">${prod.precio.antes()}</p>
+					</div>
+					<p class="eliminar">Eliminar</p>
+				</div>
+			`);
+		}
+	});
+};
+
 const trae = function () {
 	fetch( BD ).then((value) => value.json() ).then((value) => {
 		for ( let count = 1; count <= value.values.length - 1; count++ ) {
@@ -116,4 +160,4 @@ const trae = function () {
 };
 
 // export { trae };
-export default trae;
+export { trae, agregarProdPorID };

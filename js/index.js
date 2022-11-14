@@ -1,7 +1,7 @@
 // import {
 // 	trae,
 // } from "./functions.js";
-import trae from "./functions.js";
+import { trae, agregarProdPorID } from "./functions.js";
 
 // NAV CATEGORIAS
 $("nav.categorias ul.categorias li").on("click", function () {
@@ -18,7 +18,7 @@ $("nav.categorias > ul > li").on("click", function () {
 	}
 });
 
-// X del carro de compras
+// CARRO DE COMPRAS => Despliegue
 $("section.productosCarrito_contenido header img.cerrar, section.productosCarrito_fondo").on("click", () => {
 	$(".productosCarrito_fondo").hide();
 	$(".productosCarrito_contenido").removeClass("desplegar");
@@ -28,9 +28,25 @@ $("header.principal .menu ul li.carro").on("click", () => {
 	$(".productosCarrito_contenido").addClass("desplegar");
 
 	if ( $("header.principal .menu ul li a span.cantidad").html() === "0" ) {
+		$("section.productosCarrito_contenido.desplegar .conproductos").hide();
 		$("section.productosCarrito_contenido.desplegar .sinproductos").show();
 	} else {
+		$("section.productosCarrito_contenido.desplegar .sinproductos").hide();
 		$("section.productosCarrito_contenido.desplegar .conproductos").show();
+
+		$("section.productosCarrito_contenido.desplegar .conproductos .productos").html("");
+		const ellocal = localStorage.getItem("verdurizate");
+		for ( let count = 0; count <= JSON.parse(ellocal).length - 1; count++ ) {
+			const resumen = JSON.parse(ellocal);
+			const prod = {
+				id: resumen[count].id,
+				nombre: resumen[count].nombre,
+				cantidad: resumen[count].cantidad,
+			};
+			if ( prod.cantidad >= "1" ) {
+				agregarProdPorID(prod.id);
+			}
+		}
 	}
 });
 

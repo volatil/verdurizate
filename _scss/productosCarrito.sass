@@ -1,3 +1,4 @@
+@import variables
 
 section.productosCarrito_fondo
 	position: fixed
@@ -17,7 +18,7 @@ section.productosCarrito_contenido
 	width: 40%
 	height: 100%
 	top: 0
-	padding: 20px
+	padding: 20px 10px
 	right:  -40%
 	-webkit-transition: all 0.2s ease-out
 	-moz-transition:    all 0.2s ease-out
@@ -40,6 +41,22 @@ section.productosCarrito_contenido
 		.cantidadproductos
 			width: 100%
 			text-align: center
+		.productos
+			.producto
+				border: none
+				border-bottom: 1px solid $d
+				> *,
+				p.cantidad
+					margin-left: 100px
+				.imagen
+					width: 80px
+					margin-left: 0
+				.nombre
+					height: auto
+				.eliminar
+					color: $verdeHover
+					text-decoration: underline
+					cursor: pointer
 
 @media ( max-width: 550px )
 	section.productosCarrito_contenido

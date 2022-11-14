@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @keyframes Loading {
   0% {
     transform: translate(0, 0);
@@ -281,7 +282,7 @@ section.productosCarrito_contenido {
   width: 40%;
   height: 100%;
   top: 0;
-  padding: 20px;
+  padding: 20px 10px;
   right: -40%;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -307,6 +308,26 @@ section.productosCarrito_contenido .sinproductos {
 section.productosCarrito_contenido .conproductos .cantidadproductos {
   width: 100%;
   text-align: center;
+}
+section.productosCarrito_contenido .conproductos .productos .producto {
+  border: none;
+  border-bottom: 1px solid #dddddd;
+}
+section.productosCarrito_contenido .conproductos .productos .producto > *,
+section.productosCarrito_contenido .conproductos .productos .producto p.cantidad {
+  margin-left: 100px;
+}
+section.productosCarrito_contenido .conproductos .productos .producto .imagen {
+  width: 80px;
+  margin-left: 0;
+}
+section.productosCarrito_contenido .conproductos .productos .producto .nombre {
+  height: auto;
+}
+section.productosCarrito_contenido .conproductos .productos .producto .eliminar {
+  color: #77a530;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 @media (max-width: 550px) {
