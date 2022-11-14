@@ -6,4 +6,5 @@
 - CARRO => Activar 'vaciar carro'
 - CARRO => Boton "Encargar"
 - Descripcion para la canasta de productos
+- Cantidad de productos visibles bajo las categorias
 - "Mi Cuenta"?
