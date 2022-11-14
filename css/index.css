@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @keyframes Loading {
   0% {
     transform: translate(0, 0);
@@ -14,6 +16,11 @@ body {
   font-family: "Jost", sans-serif;
 }
 
+.contenedor {
+  width: 96%;
+  margin: 0 auto;
+}
+
 header.principal {
   position: fixed;
   background: white;
@@ -23,6 +30,8 @@ header.principal {
   display: flex;
   justify-content: space-between;
   padding: 0 1%;
+  background: white;
+  z-index: 1;
 }
 header.principal .logo a {
   height: 100%;
@@ -81,11 +90,6 @@ header.principal .menu ul li a span.cantidad {
 }
 .carrusel img {
   width: 100%;
-}
-
-.contenedor {
-  width: 96%;
-  margin: 0 auto;
 }
 
 nav.categorias {
@@ -237,6 +241,24 @@ nav.categorias ul.categorias li.activo {
   background: #77a530;
 }
 
+@media (max-width: 550px) {
+  .productos .producto {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    width: 100%;
+    margin: 0 auto 4%;
+  }
+  .productos .producto > *,
+  .productos .producto p.cantidad {
+    margin-left: 170px;
+    position: relative;
+  }
+  .productos .producto .imagen {
+    width: 150px;
+    margin: 0;
+    position: absolute;
+  }
+}
 section.productosCarrito_fondo {
   position: fixed;
   top: 0;
@@ -244,7 +266,7 @@ section.productosCarrito_fondo {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.2705882353);
-  z-index: 1;
+  z-index: 2;
   display: none;
 }
 
@@ -302,17 +324,6 @@ footer {
 }
 footer img {
   height: 30px;
-}
-
-@media (max-width: 550px) {
-  .carruselTemporal {
-    margin-bottom: 40px;
-  }
-  .productos .producto {
-    width: 44%;
-    border: 1px solid #dddddd;
-    padding: 10px;
-  }
 }
 
 /*# sourceMappingURL=index.css.map */
