@@ -11,14 +11,18 @@ $("nav.categorias ul.categorias li").on("click", function () {
 
 // X del carro de compras
 $("section.productosCarrito_contenido header img.cerrar").on("click", () => {
-	console.log( `escondiendo?` );
 	$(".productosCarrito_fondo").hide();
-	$("productosCarrito_contenido").removeClass("desplegar");
+	$(".productosCarrito_contenido").removeClass("desplegar");
 });
 $("header.principal .menu ul li.carro").on("click", () => {
-	console.log( `desplegando?` );
 	$(".productosCarrito_fondo").show();
-	$("productosCarrito_contenido").addClass("desplegar");
+	$(".productosCarrito_contenido").addClass("desplegar");
+
+	if ( $("header.principal .menu ul li a span.cantidad").html() === "0" ) {
+		$("section.productosCarrito_contenido.desplegar .sinproductos").show();
+	} else {
+		$("section.productosCarrito_contenido.desplegar .conproductos").show();
+	}
 });
 
 trae();

@@ -74,7 +74,7 @@ const trae = function () {
 				cantidad: value.values[count][4],
 				categoria: value.values[count][5],
 			};
-			$(".productos").append(`
+			$(".contenedor .productos").append(`
 				<div class="producto" data-id="${producto.id}" data-categoria="${producto.categoria}">
 					<img src="${producto.imagen}" alt="${producto.nombre}" />
 					<p class="nombre">${producto.nombre}</p>
