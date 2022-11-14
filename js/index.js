@@ -25,6 +25,24 @@ $("header.principal .menu ul li.carro").on("click", () => {
 	}
 });
 
+// MOBILE
+// Categorias
+$("nav.categorias > ul > li").on("click", function () {
+	const categoria = $(this).html();
+	if ( categoria === "todos los productos" ) {
+		$(".productos .producto").show();
+	} else {
+		$(".productos .producto").hide();
+		$(`.productos .producto[data-categoria="${categoria}"]`).show();
+	}
+});
+
+// MOBILE
+$("nav.categorias p.mobile").on("click", () => {
+	$("nav.categorias ul.categorias").fadeToggle();
+	$("nav.categorias p.mobile").toggle()
+});
+
 trae();
 
 // https://dribbble.com/shots/16856425-SazheSound-Music-Player

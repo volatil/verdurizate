@@ -24,9 +24,6 @@ header.principal {
   justify-content: space-between;
   padding: 0 1%;
 }
-header.principal ~ * {
-  margin-top: 70px;
-}
 header.principal .logo a {
   height: 100%;
   display: block;
@@ -79,7 +76,10 @@ header.principal .menu ul li a span.cantidad {
   left: -30px;
 }
 
-.carruselTemporal {
+.carrusel {
+  padding-top: 70px;
+}
+.carrusel img {
   width: 100%;
 }
 
@@ -96,13 +96,18 @@ nav.categorias h2 {
   color: #555;
   text-transform: uppercase;
 }
+nav.categorias p.mobile {
+  display: none;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
 nav.categorias ul.categorias {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   margin: 0;
   background: #f5f5f5;
   padding: 10px;
-  display: flex;
-  justify-content: flex-start;
-  width: max-content;
   border-radius: 10px;
 }
 nav.categorias ul.categorias li {
@@ -123,6 +128,19 @@ nav.categorias ul.categorias li.activo {
   box-shadow: 1px 1px 6px -4px black;
 }
 
+@media (max-width: 550px) {
+  nav.categorias p.mobile {
+    display: block;
+  }
+  nav.categorias ul.categorias {
+    flex-direction: column;
+    display: none;
+  }
+  nav.categorias ul.categorias ul.categorias li {
+    height: 30px;
+    line-height: 0.8em;
+  }
+}
 .productos {
   display: flex;
   flex-wrap: wrap;
@@ -131,7 +149,22 @@ nav.categorias ul.categorias li.activo {
   width: 14%;
   margin: 0 3% 5%;
 }
-.productos .producto img {
+.productos .producto .imagen {
+  position: relative;
+}
+.productos .producto .imagen span.dcto {
+  background-color: #ebebeb;
+  color: #1fa02e;
+  position: absolute;
+  top: -7px;
+  border-radius: 8px;
+  left: 0;
+  font-weight: 600;
+  font-size: 1.2em;
+  padding: 4px 6px;
+  box-shadow: 1px 1px 6px -4px black;
+}
+.productos .producto .imagen img {
   width: 100%;
 }
 .productos .producto p {
@@ -149,8 +182,18 @@ nav.categorias ul.categorias li.activo {
   font-size: 0.9em;
   margin: 0 0 5px 0;
 }
-.productos .producto p.precio {
+.productos .producto .precio {
+  display: flex;
+  justify-content: flex-start;
+}
+.productos .producto .precio p.ahora {
+  position: relative;
   font-weight: bold;
+}
+.productos .producto .precio p.antes {
+  text-decoration: line-through;
+  margin-left: 10px;
+  color: #555555;
 }
 .productos .producto .estado button.agregar {
   background: #b1e461;
@@ -256,9 +299,6 @@ footer img {
 }
 
 @media (max-width: 550px) {
-  nav.categorias {
-    display: none;
-  }
   .carruselTemporal {
     margin-bottom: 40px;
   }
