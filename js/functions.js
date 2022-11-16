@@ -154,7 +154,7 @@ const trae = function () {
 						<p class="ahora">$ ${producto.precio.ahora}</p>
 						<p class="antes">${producto.precio.antes()}</p>
 					</div>
-					${ producto.detalle ? `<p class='vermas'>¿que incluye?</p><div class='modaldetalle'><ul>${producto.detalle()}</ul></div>` : null }
+					${ String(producto.detalle()).length >= 10 ? `<p class='vermas'>¿que incluye?</p><div class='modaldetalle'><ul>${producto.detalle()}</ul></div>` : "" }
 					<div class="estado">
 						<button class="agregar">Agregar</button>
 						<div style="display:none">
