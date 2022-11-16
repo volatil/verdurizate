@@ -200,6 +200,15 @@ nav.categorias ul.categorias li.activo {
   margin-left: 10px;
   color: #555555;
 }
+.productos .producto .vermas {
+  color: #77a530;
+  text-transform: capitalize;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.productos .producto .modaldetalle {
+  display: none;
+}
 .productos .producto .estado button.agregar {
   background: #b1e461;
   color: black;

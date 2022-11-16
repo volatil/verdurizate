@@ -50,6 +50,11 @@ $("header.principal .menu ul li.carro").on("click", () => {
 	}
 });
 
+// CANASTA DESPLEGABLE PRODUCTOS
+$("body").on("click", ".productos .producto .vermas", function () {
+	$(this).parent().find(".modaldetalle").fadeToggle();
+});
+
 // MOBILE
 // NAV CATEGORIAS
 $("nav.categorias p.mobile").on("click", () => {

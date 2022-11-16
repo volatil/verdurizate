@@ -131,6 +131,16 @@ const trae = function () {
 				imagen: value.values[count][3],
 				cantidad: value.values[count][4],
 				categoria: value.values[count][5],
+				detalle: () => {
+					const detalle = value.values[count][6];
+					let todo = "";
+					if ( String(detalle).length >= 10 ) {
+						for ( let cuenta = 0; cuenta <= String(detalle).split("\n").length - 1; cuenta++ ) {
+							todo += `<li>${String(detalle).split("\n")[cuenta]}</li>`;
+						}
+					}
+					return todo;
+				},
 			};
 			$(".contenedor .productos").append(`
 				<div class="producto" data-id="${producto.id}" data-categoria="${producto.categoria}">
@@ -144,6 +154,7 @@ const trae = function () {
 						<p class="ahora">$ ${producto.precio.ahora}</p>
 						<p class="antes">${producto.precio.antes()}</p>
 					</div>
+					${ producto.detalle ? `<p class='vermas'>¿que incluye?</p><div class='modaldetalle'><ul>${producto.detalle()}</ul></div>` : null }
 					<div class="estado">
 						<button class="agregar">Agregar</button>
 						<div style="display:none">
