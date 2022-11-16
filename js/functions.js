@@ -2,6 +2,15 @@ import {
 	BD,
 } from "./constants.js";
 
+const productosVisibles = function () {
+	const cantidadProductosVisibles = $(".productos .producto:visible").length;
+	if ( cantidadProductosVisibles === 1 ) {
+		$(".cantidadResultadosVisibles > p").html(`Mostrando <strong>${cantidadProductosVisibles}</strong> producto.`);
+	} else {
+		$(".cantidadResultadosVisibles > p").html(`Mostrando <strong>${cantidadProductosVisibles}</strong> productos.`);
+	}
+};
+
 const guardarStorage = function ( data ) {
 	let todo = []; /* eslint-disable-line */
 	$.each($(".productos .producto"), function () {
@@ -167,8 +176,9 @@ const trae = function () {
 			`);
 		}
 		agregaquitaAlCarro();
+		productosVisibles();
 	});
 };
 
 // export { trae };
-export { trae, agregarProdPorID };
+export { trae, agregarProdPorID, productosVisibles };

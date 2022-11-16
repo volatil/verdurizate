@@ -1,14 +1,13 @@
 // import {
 // 	trae,
 // } from "./functions.js";
-import { trae, agregarProdPorID } from "./functions.js";
+import { trae, agregarProdPorID, productosVisibles } from "./functions.js";
 
 // NAV CATEGORIAS
 $("nav.categorias ul.categorias li").on("click", function () {
 	$("nav.categorias ul.categorias li").removeClass("activo");
 	$(this).addClass("activo");
-});
-$("nav.categorias > ul > li").on("click", function () {
+
 	const categoria = $(this).html();
 	if ( categoria === "todos los productos" ) {
 		$(".productos .producto").show();
@@ -16,6 +15,7 @@ $("nav.categorias > ul > li").on("click", function () {
 		$(".productos .producto").hide();
 		$(`.productos .producto[data-categoria="${categoria}"]`).show();
 	}
+	productosVisibles();
 });
 
 // CARRO DE COMPRAS => Despliegue

@@ -93,9 +93,6 @@ header.principal .menu ul li a span.cantidad {
   width: 100%;
 }
 
-nav.categorias {
-  margin-bottom: 30px;
-}
 nav.categorias h2 {
   font-weight: bold;
   color: #555;
@@ -146,6 +143,14 @@ nav.categorias ul.categorias li.activo {
     line-height: 0.8em;
   }
 }
+.cantidadResultadosVisibles {
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+.cantidadResultadosVisibles p {
+  font-size: 1.4em;
+}
+
 .productos {
   display: flex;
   flex-wrap: wrap;
