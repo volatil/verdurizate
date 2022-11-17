@@ -1,7 +1,6 @@
 # VERDURIZATE !
 
-- CARRO => Agregar cantidad de productos por ID en el carro
-- CARRO => Sumar dependiendo la cantidad de cada producto
+- CARRO => Calcular la cantidad de productos en el carro
 - CARRO => Calcular el valor total
 - CARRO => Activar 'vaciar carro'
 - CARRO => Boton "Encargar"
