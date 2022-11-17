@@ -6,6 +6,7 @@ import {
 	agregarProdPorID,
 	productosVisibles,
 	visualizacantidadproductos,
+	calculaCantidadProdCarro,
 } from "./functions.js";
 
 // NAV CATEGORIAS
@@ -51,6 +52,11 @@ $("header.principal .menu ul li.carro").on("click", () => {
 			if ( prod.cantidad >= "1" ) {
 				agregarProdPorID(prod.id);
 			}
+			if ( count === JSON.parse(ellocal).length - 1 ) {
+				setTimeout(() => {
+					calculaCantidadProdCarro();
+				}, 2000);
+			}
 		}
 	}
 });
@@ -62,6 +68,7 @@ $("body").on("click", "section.productosCarrito_contenido .conproductos .product
 	$(`.productos .producto[data-id=${dataid}]`).find(".estado div input").val("1");
 	$(`.productos .producto[data-id=${dataid}]`).find(".estado div button.menos").click();
 	visualizacantidadproductos();
+	calculaCantidadProdCarro();
 });
 
 // CANASTA DESPLEGABLE PRODUCTOS

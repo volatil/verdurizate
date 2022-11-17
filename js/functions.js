@@ -11,6 +11,15 @@ const productosVisibles = function () {
 	}
 };
 
+const calculaCantidadProdCarro = function () {
+	const cantidadEnCarro = $("section.productosCarrito_contenido .conproductos .productos .producto").length;
+	if ( cantidadEnCarro === 1 ) {
+		$("section.productosCarrito_contenido .conproductos .cantidadproductos strong").html("1 producto");
+	} else {
+		$("section.productosCarrito_contenido .conproductos .cantidadproductos strong").html(`${cantidadEnCarro} productos`);
+	}
+};
+
 const guardarStorage = function ( data ) {
 	let todo = []; /* eslint-disable-line */
 	$.each($(".productos .producto"), function () {
@@ -66,7 +75,6 @@ const agregaquitaAlCarro = function () {
 			$(this).parent().parent().find(".agregar")
 				.show();
 		}
-
 		visualizacantidadproductos();
 		guardarStorage();
 	});
@@ -186,4 +194,5 @@ export {
 	agregarProdPorID,
 	productosVisibles,
 	visualizacantidadproductos,
+	calculaCantidadProdCarro,
 };
