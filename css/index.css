@@ -349,6 +349,20 @@ section.productosCarrito_contenido .conproductos .productos .producto .eliminar 
   top: 0;
   right: 0;
 }
+section.productosCarrito_contenido .conproductos .loading .loader {
+  margin: 0 0 2em;
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: block;
+  vertical-align: top;
+}
+section.productosCarrito_contenido .conproductos .loading svg path,
+section.productosCarrito_contenido .conproductos .loading svg rect {
+  fill: green;
+}
 
 @media (max-width: 550px) {
   section.productosCarrito_contenido {

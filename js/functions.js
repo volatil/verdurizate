@@ -121,6 +121,7 @@ const agregarProdPorID = function ( elid ) {
 				</div>
 			`);
 		}
+		$(".loading").hide();
 	});
 };
 
