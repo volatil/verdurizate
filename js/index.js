@@ -1,7 +1,12 @@
 // import {
 // 	trae,
 // } from "./functions.js";
-import { trae, agregarProdPorID, productosVisibles } from "./functions.js";
+import {
+	trae,
+	agregarProdPorID,
+	productosVisibles,
+	visualizacantidadproductos,
+} from "./functions.js";
 
 // NAV CATEGORIAS
 $("nav.categorias ul.categorias li").on("click", function () {
@@ -50,6 +55,15 @@ $("header.principal .menu ul li.carro").on("click", () => {
 	}
 });
 
+// CARRO DE COMPRAS => Eliminar producto
+$("body").on("click", "section.productosCarrito_contenido .conproductos .productos .producto .eliminar", function () {
+	$(this).parent().remove();
+	const dataid = $(this).parent().attr("data-id");
+	$(`.productos .producto[data-id=${dataid}]`).find(".estado div input").val("1");
+	$(`.productos .producto[data-id=${dataid}]`).find(".estado div button.menos").click();
+	visualizacantidadproductos();
+});
+
 // CANASTA DESPLEGABLE PRODUCTOS
 $("body").on("click", ".productos .producto .vermas", function () {
 	$(this).parent().find(".modaldetalle").fadeToggle();
@@ -63,5 +77,4 @@ $("nav.categorias p.mobile").on("click", () => {
 });
 
 trae();
-
 // https://dribbble.com/shots/16856425-SazheSound-Music-Player
