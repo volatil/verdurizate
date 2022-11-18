@@ -264,7 +264,7 @@ nav.categorias ul.categorias li.activo {
     margin: 0 auto 4%;
   }
   .productos .producto > *,
-  .productos .producto p.cantidad {
+.productos .producto p.cantidad {
     margin-left: 170px;
     position: relative;
   }
