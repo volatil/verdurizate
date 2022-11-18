@@ -87,7 +87,7 @@ const agregaVisibleAlCarro = function () {
 			id: $(this).attr("data-id"),
 			nombre: $(this).find(".nombre").html(),
 			imagen: $(this).find(".imagen img").attr("src"),
-			precio: $(this).find(".precio").html(),
+			precio: $(this).find(".precio .ahora").html(),
 			cantidad: $(this).find(".estado div input.cantidad").val(),
 		};
 		if ( data.cantidad >= 1 ) {
@@ -106,6 +106,25 @@ const agregaVisibleAlCarro = function () {
 			`);
 		}
 	});
+};
+
+const calcularTotalPrecioCarro = function () {
+	let precioTotalCarro = 0;
+	$.each( $(".conproductos .productos .producto"), function () {
+		const data = {
+			nombre: $(this).find(".nombre").html(),
+			cantidad: Number( $(this).find(".cantidad").html() ),
+			precio: () => {
+				let precio = $(this).find(".precio .ahora").html().split(" ")[1];
+				precio = precio.replaceAll(".", "");
+				precio = Number( precio );
+				return precio;
+			},
+		};
+		const formula = data.cantidad * data.precio();
+		precioTotalCarro += formula;
+	});
+	$("section.productosCarrito_contenido .conproductos .total > p strong").html(`$ ${precioTotalCarro.toLocaleString("es-CL")}`);
 };
 
 const trae = function () {
@@ -172,11 +191,11 @@ const trae = function () {
 	});
 };
 
-// export { trae };
 export {
 	trae,
 	productosVisibles,
 	visualizacantidadproductos,
 	calculaCantidadProdCarro,
 	agregaVisibleAlCarro,
+	calcularTotalPrecioCarro,
 };

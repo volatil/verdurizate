@@ -1,12 +1,10 @@
-// import {
-// 	trae,
-// } from "./functions.js";
 import {
 	trae,
 	productosVisibles,
 	visualizacantidadproductos,
 	calculaCantidadProdCarro,
 	agregaVisibleAlCarro,
+	calcularTotalPrecioCarro,
 } from "./functions.js";
 
 // NAV CATEGORIAS
@@ -54,6 +52,7 @@ $("header.principal .menu ul li.carro").on("click", () => {
 				calculaCantidadProdCarro();
 			}
 		}
+		calcularTotalPrecioCarro();
 	}
 });
 
@@ -65,6 +64,7 @@ $("body").on("click", "section.productosCarrito_contenido .conproductos .product
 	$(`.productos .producto[data-id=${dataid}]`).find(".estado div button.menos").click();
 	visualizacantidadproductos();
 	calculaCantidadProdCarro();
+	calcularTotalPrecioCarro();
 });
 
 // CANASTA DESPLEGABLE PRODUCTOS
