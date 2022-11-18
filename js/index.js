@@ -3,10 +3,10 @@
 // } from "./functions.js";
 import {
 	trae,
-	agregarProdPorID,
 	productosVisibles,
 	visualizacantidadproductos,
 	calculaCantidadProdCarro,
+	agregaVisibleAlCarro,
 } from "./functions.js";
 
 // NAV CATEGORIAS
@@ -50,12 +50,8 @@ $("header.principal .menu ul li.carro").on("click", () => {
 				cantidad: resumen[count].cantidad,
 			};
 			if ( prod.cantidad >= "1" ) {
-				agregarProdPorID(prod.id);
-			}
-			if ( count === JSON.parse(ellocal).length - 1 ) {
-				setTimeout(() => {
-					calculaCantidadProdCarro();
-				}, 2000);
+				agregaVisibleAlCarro();
+				calculaCantidadProdCarro();
 			}
 		}
 	}

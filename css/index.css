@@ -290,6 +290,7 @@ section.productosCarrito_contenido.desplegar {
 }
 
 section.productosCarrito_contenido {
+  overflow: auto;
   position: fixed;
   z-index: 2;
   background: white;

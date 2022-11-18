@@ -80,48 +80,31 @@ const agregaquitaAlCarro = function () {
 	});
 };
 
-const agregarProdPorID = function ( elid ) {
-	fetch( BD ).then((value) => value.json() ).then((value) => {
-		const prod = {
-			id: value.values[elid][0],
-			nombre: value.values[elid][1],
-			precio: {
-				ahora: Number(value.values[elid][2]).toLocaleString("es-CL"),
-				dcto: value.values[elid][7] ? `${value.values[elid][7]}%` : "",
-				antes: () => {
-					let finalantes = "";
-					if ( prod.precio.dcto ) {
-						const elantes = Number( prod.precio.dcto.replaceAll("%", "") );
-						const elahora = Number( prod.precio.ahora.replaceAll(".", "") );
-						let total = (elantes * elahora);
-						total /= 100;
-						finalantes = `$ ${ parseInt( total, 10 ) }`;
-					}
-					return finalantes;
-				},
-			},
-			imagen: value.values[elid][3],
-			cantidad: value.values[elid][4],
-			categoria: value.values[elid][5],
+const agregaVisibleAlCarro = function () {
+	$(".conproductos .productos").html("");
+	$.each( $(".contenedor .productos .producto"), function () {
+		const data = {
+			id: $(this).attr("data-id"),
+			nombre: $(this).find(".nombre").html(),
+			imagen: $(this).find(".imagen img").attr("src"),
+			precio: $(this).find(".precio").html(),
+			cantidad: $(this).find(".estado div input.cantidad").val(),
 		};
-		if ( prod.id === elid ) {
+		if ( data.cantidad >= 1 ) {
 			$(".conproductos .productos").append(`
-				<div class="producto" data-id="${prod.id}" data-categoria="${prod.categoria}">
+				<div class="producto" data-id="${data.id}">
 					<div class="imagen">
-						<span class="dcto">${prod.precio.dcto}</span>
-						<img src="${prod.imagen}" alt="${prod.nombre}" />
+						<img src="${data.imagen}" alt="${data.nombre}" />
 					</div>
-					<p class="nombre">${prod.nombre}</p>
-					<p class="cantidad">${prod.cantidad}</p>
+					<p class="nombre">${data.nombre}</p>
+					<p class="cantidad">${data.cantidad}</p>
 					<div class="precio">
-						<p class="ahora">$ ${prod.precio.ahora}</p>
-						<p class="antes">${prod.precio.antes()}</p>
+						<p class="ahora">${data.precio}</p>
 					</div>
 					<p class="eliminar">Eliminar</p>
 				</div>
 			`);
 		}
-		$(".loading").hide();
 	});
 };
 
@@ -192,8 +175,8 @@ const trae = function () {
 // export { trae };
 export {
 	trae,
-	agregarProdPorID,
 	productosVisibles,
 	visualizacantidadproductos,
 	calculaCantidadProdCarro,
+	agregaVisibleAlCarro,
 };
