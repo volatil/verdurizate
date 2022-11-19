@@ -50,6 +50,10 @@ header.principal .menu ul li:nth-child(1) {
   padding-left: 30px;
   padding-right: 10px;
 }
+header.principal .menu ul li:hover p {
+  color: #77a530;
+  text-decoration: underline;
+}
 header.principal .menu ul li a {
   position: relative;
   display: flex;
