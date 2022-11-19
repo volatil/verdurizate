@@ -127,6 +127,16 @@ const calcularTotalPrecioCarro = function () {
 	$("section.productosCarrito_contenido .conproductos .total > p strong").html(`$ ${precioTotalCarro.toLocaleString("es-CL")}`);
 };
 
+const vaciarCarro = function () {
+	$.each($(".contenedor .productos .producto"), function () {
+		$(this).find(".estado div input").val("1");
+		$(this).find(".estado div button.menos").click();
+	});
+	$(".conproductos .productos .producto").html("");
+	$(".conproductos").hide();
+	$(".sinproductos").show();
+};
+
 const trae = function () {
 	fetch( BD ).then((value) => value.json() ).then((value) => {
 		for ( let count = 1; count <= value.values.length - 1; count++ ) {
@@ -197,5 +207,6 @@ export {
 	visualizacantidadproductos,
 	calculaCantidadProdCarro,
 	agregaVisibleAlCarro,
+	vaciarCarro,
 	calcularTotalPrecioCarro,
 };

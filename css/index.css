@@ -364,6 +364,17 @@ section.productosCarrito_contenido .conproductos .loading svg path,
 section.productosCarrito_contenido .conproductos .loading svg rect {
   fill: green;
 }
+section.productosCarrito_contenido .conproductos nav .vaciarcarro {
+  color: #77a530;
+  text-decoration: underline;
+  text-transform: capitalize;
+  cursor: pointer;
+  text-align: center;
+}
+section.productosCarrito_contenido .conproductos .total p {
+  text-align: center;
+  text-transform: capitalize;
+}
 
 @media (max-width: 550px) {
   section.productosCarrito_contenido {

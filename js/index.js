@@ -5,6 +5,7 @@ import {
 	calculaCantidadProdCarro,
 	agregaVisibleAlCarro,
 	calcularTotalPrecioCarro,
+	vaciarCarro,
 } from "./functions.js";
 
 // NAV CATEGORIAS
@@ -69,6 +70,11 @@ $("body").on("click", "section.productosCarrito_contenido .conproductos .product
 		$(".conproductos").hide();
 		$(".sinproductos").show();
 	}
+});
+
+// CARRO DE COMPRAS => Vaciar Carro
+$("section.productosCarrito_contenido .conproductos nav .vaciarcarro").on("click", () => {
+	vaciarCarro();
 });
 
 // CANASTA DESPLEGABLE PRODUCTOS
