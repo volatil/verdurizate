@@ -65,6 +65,10 @@ $("body").on("click", "section.productosCarrito_contenido .conproductos .product
 	visualizacantidadproductos();
 	calculaCantidadProdCarro();
 	calcularTotalPrecioCarro();
+	if ( $(".conproductos .productos .producto").length === 0 ) {
+		$(".conproductos").hide();
+		$(".sinproductos").show();
+	}
 });
 
 // CANASTA DESPLEGABLE PRODUCTOS
