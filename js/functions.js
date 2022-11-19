@@ -147,15 +147,19 @@ const trae = function () {
 					ahora: Number(value.values[count][2]).toLocaleString("es-CL"),
 					dcto: value.values[count][7] ? `${value.values[count][7]}%` : "",
 					antes: () => {
-						let finalantes = "";
-						if ( producto.precio.dcto ) {
-							const elantes = Number( producto.precio.dcto.replaceAll("%", "") );
-							const elahora = Number( producto.precio.ahora.replaceAll(".", "") );
-							let total = (elantes * elahora);
-							total /= 100;
-							finalantes = `$ ${ parseInt( total, 10 ) }`;
-						}
+						const finalantes = Number(value.values[count][2]).toLocaleString("es-CL");
 						return finalantes;
+					},
+					ahoracondcto: () => {
+						const precioahora = Number(value.values[count][2]);
+						let dcto = value.values[count][7];
+						dcto -= 100;
+						let ahoracondcto = dcto * precioahora;
+						ahoracondcto /= 100;
+						ahoracondcto = parseInt(ahoracondcto, 10);
+						ahoracondcto = String(ahoracondcto).replaceAll("-", "");
+						ahoracondcto = Number(ahoracondcto).toLocaleString("es-CL");
+						return ahoracondcto;
 					},
 				},
 				imagen: value.values[count][3],
@@ -181,8 +185,8 @@ const trae = function () {
 					<p class="nombre">${producto.nombre}</p>
 					<p class="cantidad">${producto.cantidad}</p>
 					<div class="precio">
-						<p class="ahora">$ ${producto.precio.ahora}</p>
-						<p class="antes">${producto.precio.antes()}</p>
+						<p class="ahora">$ ${producto.precio.dcto ? producto.precio.ahoracondcto() : producto.precio.ahora}</p>
+						<p class="antes">${producto.precio.dcto ? producto.precio.antes() : ""}</p>
 					</div>
 					${ String(producto.detalle()).length >= 10 ? `<p class='vermas'>¿que incluye?</p><div class='modaldetalle'><ul>${producto.detalle()}</ul></div>` : "" }
 					<div class="estado">
