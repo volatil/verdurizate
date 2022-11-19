@@ -2,17 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@keyframes Loading {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, 15px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
 body {
   font-family: "Jost", sans-serif;
 }
@@ -356,20 +345,6 @@ section.productosCarrito_contenido .conproductos .productos .producto .eliminar 
   position: absolute;
   top: 0;
   right: 0;
-}
-section.productosCarrito_contenido .conproductos .loading .loader {
-  margin: 0 0 2em;
-  height: 100px;
-  width: 20%;
-  text-align: center;
-  padding: 1em;
-  margin: 0 auto 1em;
-  display: block;
-  vertical-align: top;
-}
-section.productosCarrito_contenido .conproductos .loading svg path,
-section.productosCarrito_contenido .conproductos .loading svg rect {
-  fill: green;
 }
 section.productosCarrito_contenido .conproductos nav .vaciarcarro {
   color: #77a530;
