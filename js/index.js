@@ -6,7 +6,13 @@ import {
 	agregaVisibleAlCarro,
 	calcularTotalPrecioCarro,
 	vaciarCarro,
+	scrollTop,
 } from "./functions.js";
+
+// LOGO => Scroll to up
+$(".logo").on("click", () => {
+	scrollTop();
+});
 
 // NAV CATEGORIAS
 $("nav.categorias ul.categorias li").on("click", function () {

@@ -23,12 +23,9 @@ header.principal {
   background: white;
   z-index: 1;
 }
-header.principal .logo a {
+header.principal .logo img {
   height: 100%;
-  display: block;
-}
-header.principal .logo a img {
-  height: 100%;
+  cursor: pointer;
 }
 header.principal .menu ul {
   display: flex;

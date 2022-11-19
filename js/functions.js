@@ -137,6 +137,11 @@ const vaciarCarro = function () {
 	$(".sinproductos").show();
 };
 
+const scrollTop = function () {
+	$("html, body").animate({ scrollTop: 0 }, 1);
+	return false;
+};
+
 const trae = function () {
 	fetch( BD ).then((value) => value.json() ).then((value) => {
 		for ( let count = 1; count <= value.values.length - 1; count++ ) {
@@ -213,4 +218,5 @@ export {
 	agregaVisibleAlCarro,
 	vaciarCarro,
 	calcularTotalPrecioCarro,
+	scrollTop,
 };
