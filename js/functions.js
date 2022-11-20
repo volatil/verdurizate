@@ -138,7 +138,7 @@ const vaciarCarro = function () {
 };
 
 const encargarContenido = function () {
-	let pedido = "";
+	let pedido = "Hola ! me gustaria encargar: ";
 	$.each($(".contenedor .productos .producto"), function () {
 		const data = {
 			nombre: $(this).find("p.nombre").html(),
@@ -146,17 +146,11 @@ const encargarContenido = function () {
 			unidad: $(this).find("p.cantidad").html(),
 		};
 		if ( data.cantidad >= 1 ) {
-			pedido += `- ${data.cantidad} ${data.unidad} de ${data.nombre}
-				`;
+			pedido += `${data.cantidad} ${data.unidad} de ${data.nombre}, `;
 		}
 	});
-
-	const mensaje = `
-		Hola ! me gustaria encargar:
-		${pedido}
-		Gracias.
-	`;
-	const attrHrefMensaje = `https://api.whatsapp.com/send?phone=56982769426&text=${mensaje}`;
+	pedido += " gracias.";
+	const attrHrefMensaje = `https://api.whatsapp.com/send?phone=56982769426&text=${pedido}`;
 	$("section.productosCarrito_contenido .conproductos a.generarpedido").attr("href", attrHrefMensaje);
 };
 
