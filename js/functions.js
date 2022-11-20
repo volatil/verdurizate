@@ -137,6 +137,29 @@ const vaciarCarro = function () {
 	$(".sinproductos").show();
 };
 
+const encargarContenido = function () {
+	let pedido = "";
+	$.each($(".contenedor .productos .producto"), function () {
+		const data = {
+			nombre: $(this).find("p.nombre").html(),
+			cantidad: $(this).find(".estado div input").val(),
+			unidad: $(this).find("p.cantidad").html(),
+		};
+		if ( data.cantidad >= 1 ) {
+			pedido += `- ${data.cantidad} ${data.unidad} de ${data.nombre}
+				`;
+		}
+	});
+
+	const mensaje = `
+		Hola ! me gustaria encargar:
+		${pedido}
+		Gracias.
+	`;
+	const attrHrefMensaje = `https://api.whatsapp.com/send?phone=56982769426&text=${mensaje}`;
+	$("section.productosCarrito_contenido .conproductos a.generarpedido").attr("href", attrHrefMensaje);
+};
+
 const scrollTop = function () {
 	$("html, body").animate({ scrollTop: 0 }, 1);
 	return false;
@@ -219,4 +242,5 @@ export {
 	vaciarCarro,
 	calcularTotalPrecioCarro,
 	scrollTop,
+	encargarContenido,
 };

@@ -7,6 +7,7 @@ import {
 	calcularTotalPrecioCarro,
 	vaciarCarro,
 	scrollTop,
+	encargarContenido,
 } from "./functions.js";
 
 // LOGO => Scroll to up
@@ -60,6 +61,8 @@ $("header.principal .menu ul li.carro").on("click", () => {
 			}
 		}
 		calcularTotalPrecioCarro();
+		// CARRO DE COMPRAS => Generar Pedido WhatsApp
+		encargarContenido();
 	}
 });
 
@@ -82,6 +85,7 @@ $("body").on("click", "section.productosCarrito_contenido .conproductos .product
 $("section.productosCarrito_contenido .conproductos nav .vaciarcarro").on("click", () => {
 	vaciarCarro();
 });
+
 
 // CANASTA DESPLEGABLE PRODUCTOS
 $("body").on("click", ".productos .producto .vermas", function () {
