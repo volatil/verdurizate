@@ -99,4 +99,11 @@ $("nav.categorias p.mobile").on("click", () => {
 });
 
 trae();
+setTimeout(() => {
+	$($(".productos .producto")[2]).find(".estado button.agregar").click();
+	$($(".productos .producto")[3]).find(".estado button.agregar").click();
+	$($(".productos .producto")[8]).find(".estado button.agregar").click();
+	$($(".productos .producto")[10]).find(".estado button.agregar").click();
+	$("header.principal .menu ul li.carro").click();
+}, 2000);
 // https://dribbble.com/shots/16856425-SazheSound-Music-Player

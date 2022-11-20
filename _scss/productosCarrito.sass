@@ -87,8 +87,18 @@ section.productosCarrito_contenido
 			display: block
 			text-transform: uppercase
 			letter-spacing: 0.05em
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			align-items: flex-end
+			padding: 7px 22px
 			&:hover
 				background: $verdeNuevoHover
+			p
+				margin: 0
+			img
+				width: 20px
+				height: 25px
 
 @media ( max-width: 550px )
 	section.productosCarrito_contenido
