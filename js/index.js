@@ -98,12 +98,17 @@ $("nav.categorias p.mobile").on("click", () => {
 	$("nav.categorias p.mobile").toggle();
 });
 
+// FOOTER
+// Año de lo no reservado
+const elano = new Date().getFullYear();
+$("footer p span.elano").html(elano);
+
 trae();
-setTimeout(() => {
-	$($(".productos .producto")[2]).find(".estado button.agregar").click();
-	$($(".productos .producto")[3]).find(".estado button.agregar").click();
-	$($(".productos .producto")[8]).find(".estado button.agregar").click();
-	$($(".productos .producto")[10]).find(".estado button.agregar").click();
-	$("header.principal .menu ul li.carro").click();
-}, 2000);
+// setTimeout(() => {
+// 	$($(".productos .producto")[2]).find(".estado button.agregar").click();
+// 	$($(".productos .producto")[3]).find(".estado button.agregar").click();
+// 	$($(".productos .producto")[8]).find(".estado button.agregar").click();
+// 	$($(".productos .producto")[10]).find(".estado button.agregar").click();
+// 	$("header.principal .menu ul li.carro").click();
+// }, 2000);
 // https://dribbble.com/shots/16856425-SazheSound-Music-Player
