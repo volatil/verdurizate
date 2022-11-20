@@ -346,6 +346,7 @@ section.productosCarrito_contenido .conproductos .productos .producto .imagen {
 }
 section.productosCarrito_contenido .conproductos .productos .producto .nombre {
   height: auto;
+  margin-right: 55px;
 }
 section.productosCarrito_contenido .conproductos .productos .producto .eliminar {
   color: #77a530;
@@ -401,8 +402,17 @@ section.productosCarrito_contenido .conproductos a.generarpedido:hover {
 
 @media (max-width: 550px) {
   section.productosCarrito_contenido {
-    width: 70%;
-    right: -70%;
+    width: 80%;
+    right: -80%;
+  }
+  header.principal .logo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  header.principal .logo img {
+    height: auto;
   }
 }
 footer {
