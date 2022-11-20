@@ -356,6 +356,9 @@ section.productosCarrito_contenido .conproductos .productos .producto .eliminar 
   top: 0;
   right: 0;
 }
+section.productosCarrito_contenido .conproductos nav {
+  margin-bottom: 20px;
+}
 section.productosCarrito_contenido .conproductos nav .vaciarcarro {
   color: #77a530;
   text-decoration: underline;
@@ -367,6 +370,11 @@ section.productosCarrito_contenido .conproductos nav .vaciarcarro {
 section.productosCarrito_contenido .conproductos .total p {
   text-align: center;
   text-transform: capitalize;
+  margin: 0;
+}
+section.productosCarrito_contenido .conproductos .enviogratis p {
+  text-align: center;
+  margin: 0;
 }
 section.productosCarrito_contenido .conproductos a.generarpedido {
   background: #b1e461;
@@ -408,7 +416,7 @@ section.productosCarrito_contenido .conproductos a.generarpedido p {
   margin: 0;
 }
 section.productosCarrito_contenido .conproductos a.generarpedido img {
-  width: 20px;
+  width: 30px;
   height: 25px;
 }
 

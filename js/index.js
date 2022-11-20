@@ -100,8 +100,10 @@ $("nav.categorias p.mobile").on("click", () => {
 
 // FOOTER
 // Año de lo no reservado
-const elano = new Date().getFullYear();
-$("footer p span.elano").html(elano);
+{
+	const elano = new Date().getFullYear();
+	$("footer p span.elano").html(elano);
+}
 
 trae();
 // setTimeout(() => {
