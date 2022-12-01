@@ -94,7 +94,7 @@ const agregaVisibleAlCarro = function () {
 			$(".conproductos .productos").append(`
 				<div class="producto" data-id="${data.id}">
 					<div class="imagen">
-						<img src="${data.imagen}" alt="${data.nombre}" />
+						<img class="lazyload" data-src="${data.imagen}" alt="${data.nombre}" />
 					</div>
 					<p class="nombre">${data.nombre}</p>
 					<p class="cantidad">${data.cantidad}</p>
@@ -106,6 +106,7 @@ const agregaVisibleAlCarro = function () {
 			`);
 		}
 	});
+	lazyload(); // eslint-disable-line
 };
 
 const calcularTotalPrecioCarro = function () {
@@ -202,7 +203,7 @@ const trae = function () {
 				<div class="producto" data-id="${producto.id}" data-categoria="${producto.categoria}">
 					<div class="imagen">
 						<span class="dcto">${producto.precio.dcto}</span>
-						<img src="${producto.imagen}" alt="${producto.nombre}" />
+						<img class="lazyload" alt="${producto.nombre}" data-src="${producto.imagen}" />
 					</div>
 					<p class="nombre">${producto.nombre}</p>
 					<p class="cantidad">${producto.cantidad}</p>
@@ -224,6 +225,7 @@ const trae = function () {
 		}
 		agregaquitaAlCarro();
 		productosVisibles();
+		lazyload(); // eslint-disable-line
 	});
 };
 
