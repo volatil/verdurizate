@@ -2,7 +2,86 @@ doctype
 html( lang="es" )
 	head
 		include head/meta
-		include head/link
+		link(rel='icon' sizes='32x32' type='image/png' href='./images/favicon.png')
+		style.
+				
+			header.principal {
+				position: fixed;
+				background: white;
+				width: 100%;
+				height: 70px;
+				border-bottom: 1px solid #cccccc;
+				display: flex;
+				justify-content: space-between;
+				padding: 0;
+				z-index: 1;
+				top: 0;
+			}
+			header.principal .logo img {
+			  height: 100%;
+			  cursor: pointer;
+			}
+			header.principal .menu {
+			  margin-right: 30px;
+			}
+			header.principal .menu ul {
+			  display: flex;
+			  align-items: center;
+			  margin: 0;
+			  padding: 0;
+			  height: 100%;
+			}
+			header.principal .menu ul li {
+			  padding: 0;
+			  margin: 0;
+			  list-style: none;
+			  cursor: pointer;
+			  height: 100%;
+			  position: relative;
+			  display: flex;
+			  flex-direction: row;
+			  align-content: center;
+			  align-items: center;
+			  text-decoration: none;
+			  color: #333333;
+			}
+			header.principal .menu ul li:nth-child(1) {
+			  padding-left: 30px;
+			  padding-right: 10px;
+			}
+			header.principal .menu ul li:hover p {
+			  color: #2c862d;
+			  text-decoration: underline;
+			}
+			header.principal .menu ul li img {
+			  width: 20px;
+			  margin-right: 7px;
+			}
+			header.principal .menu ul li p {
+			  text-transform: capitalize;
+			  margin: 0;
+			  padding: 0;
+			}
+			header.principal .menu ul li span.cantidad {
+			  background: #137c13;
+			  color: white;
+			  border-radius: 50%;
+			  padding: 2px 6px;
+			  height: 30px;
+			  width: 23px;
+			  text-align: center;
+			  line-height: 1.9em;
+			  position: absolute;
+			  top: 5px;
+			  left: -5px;
+			}
+			
+			.carrusel {
+			  padding-top: 70px;
+			}
+			.carrusel img {
+			  width: 100%;
+			}
 		
 		title Verdurizate | AHORRA dinero, compra SALUDABLE.
 	body
