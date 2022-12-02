@@ -41,7 +41,7 @@ const visualizacantidadproductos = function () {
 	let cantidadproducto = 0;
 	$.each($(".contenedor .productos .producto"), function () {
 		cantidadproducto += Number( $(this).find(".estado input").val() );
-		$("header .menu ul li a span.cantidad").html( cantidadproducto );
+		$("header .menu ul li span.cantidad").html( cantidadproducto );
 	});
 };
 
