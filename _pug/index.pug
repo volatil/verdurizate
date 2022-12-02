@@ -1,20 +1,21 @@
-doctype html
-head
-	include head/meta
-	include head/link
-	include head/script
+doctype 
+html( lang="es" )
+	head
+		include head/meta
+		include head/link
+		include head/script
+		
+		title Verdurizate | AHORRA dinero, compra SALUDABLE.
+	body
+		include productoscarrito
+		include header
+		
+		include components/carrusel
 	
-	title Verdurizate | AHORRA dinero, compra SALUDABLE.
-body
-	include productoscarrito
-	include header
-	
-	include components/carrusel
-
-	.contenedor
-		include components/navcategorias
-		include components/cantidadResultadosVisibles
-		.productos
-	
-	include footer
-	//- https://dribbble.com/shots/15980272-HODXpress-Grocery-Delivery
+		.contenedor
+			include components/navcategorias
+			include components/cantidadResultadosVisibles
+			.productos
+		
+		include footer
+		//- https://dribbble.com/shots/15980272-HODXpress-Grocery-Delivery
