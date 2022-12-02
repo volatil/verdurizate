@@ -188,7 +188,6 @@ const trae = function () {
 				},
 				imagen: value.values[count][3],
 				imagenresize: ( size ) => {
-					// size = "-1024-1024";
 					const imagenDB = value.values[count][3];
 					const imagenresize = `${imagenDB.split("-360-360")[0]}${size}`;
 					return imagenresize;
