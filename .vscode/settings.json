@@ -12,17 +12,43 @@
 			{
 				 "match": ".*",
 				 "isAsync": true,
+				 "cmd": "echo.> css/header.min.css",
+			},
+			
+			
+			{
+				 "match": ".*",
+				 "isAsync": true,
 				 "cmd": "sass _scss/index.sass:css/index.css",
 			},
 			{
 				 "match": ".*",
 				 "isAsync": true,
+				 "cmd": "sass _scss/header.sass:css/header.css",
+			},
+			
+			
+			
+			
+			
+			{
+				 "match": ".*",
+				 "isAsync": true,
 				 "cmd": "minify js/index.js > js/index.min.js",
 			},
+			
+			
+			
+			
 			{
 				 "match": ".*",
 				 "isAsync": true,
 				 "cmd": "minify css/index.css > css/index.min.css",
+			},
+			{
+				 "match": ".*",
+				 "isAsync": true,
+				 "cmd": "minify css/header.css > css/header.min.css",
 			},
 			// {
 			// 	 "match": ".*",

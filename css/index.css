@@ -10,6 +10,14 @@ body {
   margin: 0 auto;
 }
 
+.carrusel {
+  padding-top: 70px;
+}
+.carrusel img {
+  width: 100% !important;
+  height: auto !important;
+}
+
 nav.categorias h2 {
   font-weight: bold;
   color: #555555;
@@ -94,7 +102,8 @@ nav.categorias ul.categorias li.activo {
   box-shadow: 1px 1px 6px -4px black;
 }
 .productos .producto .imagen img {
-  width: 100%;
+  width: 100% !important;
+  height: auto !important;
 }
 .productos .producto p {
   color: black;
@@ -343,19 +352,11 @@ section.productosCarrito_contenido .conproductos a.generarpedido img {
     width: 80%;
     right: -80%;
   }
-  header.principal .logo {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  header.principal .logo img {
-    height: auto;
-  }
 }
 footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-top: 1px solid #2c862d;
   margin-top: 100px;
   padding: 20px 20px 0;

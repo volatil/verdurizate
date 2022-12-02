@@ -210,6 +210,8 @@ const trae = function () {
 					<div class="imagen">
 						<span class="dcto">${producto.precio.dcto}</span>
 						<img 
+							width="270"
+							height="270"
 							class="lazyload" 
 							alt="${producto.nombre}" 
 							data-src="${producto.imagenresize("-360-360")}" 
