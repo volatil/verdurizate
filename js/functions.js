@@ -186,6 +186,12 @@ const trae = function () {
 					},
 				},
 				imagen: value.values[count][3],
+				imagenresize: ( size ) => {
+					// size = "-1024-1024";
+					const imagenDB = value.values[count][3];
+					const imagenresize = `${imagenDB.split("-360-360")[0]}${size}`;
+					return imagenresize;
+				},
 				cantidad: value.values[count][4],
 				categoria: value.values[count][5],
 				detalle: () => {
@@ -203,7 +209,12 @@ const trae = function () {
 				<div class="producto" data-id="${producto.id}" data-categoria="${producto.categoria}">
 					<div class="imagen">
 						<span class="dcto">${producto.precio.dcto}</span>
-						<img class="lazyload" alt="${producto.nombre}" data-src="${producto.imagen}" />
+						<img 
+							class="lazyload" 
+							alt="${producto.nombre}" 
+							data-src="${producto.imagenresize("-360-360")}" 
+							data-srcset="${producto.imagenresize("-150-150")} 480w, ${producto.imagenresize("-270-270")} 640w" 
+						/>
 					</div>
 					<p class="nombre">${producto.nombre}</p>
 					<p class="cantidad">${producto.cantidad}</p>
