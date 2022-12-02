@@ -19,13 +19,16 @@ header.principal {
   border-bottom: 1px solid #cccccc;
   display: flex;
   justify-content: space-between;
-  padding: 0 1%;
-  background: white;
+  padding: 0;
   z-index: 1;
+  top: 0;
 }
 header.principal .logo img {
   height: 100%;
   cursor: pointer;
+}
+header.principal .menu {
+  margin-right: 30px;
 }
 header.principal .menu ul {
   display: flex;
@@ -38,7 +41,6 @@ header.principal .menu ul li {
   padding: 0;
   margin: 0;
   list-style: none;
-  margin-left: 30px;
   cursor: pointer;
   height: 100%;
   position: relative;
@@ -72,12 +74,12 @@ header.principal .menu ul li span.cantidad {
   border-radius: 50%;
   padding: 2px 6px;
   height: 30px;
-  width: 30px;
+  width: 23px;
   text-align: center;
-  line-height: 1.6em;
+  line-height: 1.9em;
   position: absolute;
   top: 5px;
-  left: 0px;
+  left: -5px;
 }
 
 .carrusel {
@@ -91,6 +93,8 @@ nav.categorias h2 {
   font-weight: bold;
   color: #555555;
   text-transform: uppercase;
+  font-size: 2.3em;
+  margin: 0;
 }
 nav.categorias p.mobile {
   display: none;
@@ -184,7 +188,7 @@ nav.categorias ul.categorias li.activo {
 .productos .producto p.cantidad {
   color: #555555;
   font-size: 0.9em;
-  margin: 0 0 5px 0;
+  margin: 0;
 }
 .productos .producto .precio {
   display: flex;
@@ -193,6 +197,7 @@ nav.categorias ul.categorias li.activo {
 .productos .producto .precio p.ahora {
   position: relative;
   font-weight: bold;
+  margin-top: 5px;
 }
 .productos .producto .precio p.antes {
   text-decoration: line-through;
@@ -210,13 +215,14 @@ nav.categorias ul.categorias li.activo {
 }
 .productos .producto .estado button.agregar {
   background: #137c13;
-  color: black;
   color: white;
+  height: 40px;
   border: 1px solid #2c862d;
   border-radius: 40px;
   padding: 7px 15px;
   margin: 0 auto;
   text-align: center;
+  cursor: pointer;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -237,13 +243,14 @@ nav.categorias ul.categorias li.activo {
 }
 .productos .producto .estado div button {
   background: #137c13;
-  color: black;
   color: white;
+  height: 40px;
   border: 1px solid #2c862d;
   border-radius: 40px;
   padding: 7px 15px;
   margin: 0 auto;
   text-align: center;
+  cursor: pointer;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -371,20 +378,19 @@ section.productosCarrito_contenido .conproductos .enviogratis p {
 }
 section.productosCarrito_contenido .conproductos a.generarpedido {
   background: #137c13;
-  color: black;
   color: white;
+  height: 40px;
   border: 1px solid #2c862d;
   border-radius: 40px;
   padding: 7px 15px;
   margin: 0 auto;
   text-align: center;
+  cursor: pointer;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-  background: #137c13;
   text-decoration: none;
-  color: white;
   margin: 30px auto 0;
   width: 160px;
   display: block;
@@ -393,7 +399,7 @@ section.productosCarrito_contenido .conproductos a.generarpedido {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   padding: 7px 22px;
 }
 section.productosCarrito_contenido .conproductos a.generarpedido:hover {

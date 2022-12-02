@@ -151,7 +151,8 @@ const encargarContenido = function () {
 		}
 	});
 	pedido += " gracias.";
-	const attrHrefMensaje = `https://api.whatsapp.com/send?phone=56982769426&text=${pedido}`;
+	// const attrHrefMensaje = `https://api.whatsapp.com/send?phone=56982769426&text=${pedido}`;
+	const attrHrefMensaje = `https://api.whatsapp.com/send?phone=56996336330&text=${pedido}`;
 	$("section.productosCarrito_contenido .conproductos a.generarpedido").attr("href", attrHrefMensaje);
 };
 
