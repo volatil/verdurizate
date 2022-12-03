@@ -187,6 +187,11 @@ const trae = function () {
 					},
 				},
 				imagen: value.values[count][3],
+				imagenserver: ( size ) => {
+					const imagenid = value.values[count][8];
+					const imagencompleta = `./images/productos/webp/${size}/${imagenid}_${size}x.webp`;
+					return imagencompleta;
+				},
 				imagenresize: ( size ) => {
 					const imagenDB = value.values[count][3];
 					const imagenresize = `${imagenDB.split("-360-360")[0]}${size}`;
@@ -209,13 +214,24 @@ const trae = function () {
 				<div class="producto" data-id="${producto.id}" data-categoria="${producto.categoria}">
 					<div class="imagen">
 						<span class="dcto">${producto.precio.dcto}</span>
+						<!--
+							<img 
+								width="270"
+								height="270"
+								class="lazyload" 
+								alt="${producto.nombre}" 
+								data-src="${producto.imagenresize("-270-270")}" 
+								data-srcset="${producto.imagenresize("-150-150")} 480w, ${producto.imagenresize("-270-270")} 640w" 
+							/>
+						-->
 						<img 
 							width="270"
 							height="270"
 							class="lazyload" 
 							alt="${producto.nombre}" 
-							data-src="${producto.imagenresize("-360-360")}" 
-							data-srcset="${producto.imagenresize("-150-150")} 480w, ${producto.imagenresize("-270-270")} 640w" 
+							data-src="${producto.imagenserver("270")}" 
+							data-srcset="${producto.imagenserver("150")} 480w, ${producto.imagenserver("270")} 640w" 
+							
 						/>
 					</div>
 					<p class="nombre">${producto.nombre}</p>
